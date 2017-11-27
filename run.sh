@@ -12,8 +12,8 @@ set -e
 nvidia_version=nvidia-$(cat /proc/driver/nvidia/version | head -n 1 | awk '{ print $8 }' | awk -F'[_.]' '{print $1}')
 NVIDIA_DRIVER="/usr/lib/$nvidia_version"
 
-# Run the container NVIDIA Graphics acceleration shared X11
-nvidia-docker run --rm \
+# Run the container shared X11, shared network interface and mapped NVIDIA driver
+docker run --rm \
   --net=host \
   --ipc=host \
   --privileged \
