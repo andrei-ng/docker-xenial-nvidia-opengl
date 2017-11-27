@@ -4,9 +4,6 @@ MAINTAINER Andrei Gherghescu <gandrein@gmail.com>
 
 LABEL Description="Ubuntu Xenial 16.04 with mapped NVIDIA driver from the host" Version="1.0"
 
-# Arguments
-# ARG nvidia_driver
-
 # ------------------------------------------ Install required (&useful) packages --------------------------------------
 RUN apt-get update && apt-get install -y \
 software-properties-common python-software-properties \
