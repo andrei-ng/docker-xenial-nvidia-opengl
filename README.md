@@ -44,7 +44,7 @@ The `run` script checks for the version of NVIDIA driver on the host and mounts 
   -v ${NVIDIA_DRIVER}:/usr/local/nvidia/lib64 \
 ```
 
-The image also shares the X11 unix socket with the host and it's network interface.
+The image also shares the X11 unix socket with the host and its network interface.
 
 ### Testing functionality
 
