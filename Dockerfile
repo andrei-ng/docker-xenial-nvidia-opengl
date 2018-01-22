@@ -6,12 +6,14 @@ LABEL Description="Ubuntu Xenial 16.04 with mapped NVIDIA driver from the host" 
 
 # ------------------------------------------ Install required (&useful) packages --------------------------------------
 RUN apt-get update && apt-get install -y \
-software-properties-common python-software-properties \
-lsb-release \
-mesa-utils \
-wget \
-curl \
-sudo vim
+  software-properties-common python-software-properties \
+  lsb-release \
+  mesa-utils \
+  wget \
+  curl \
+  sudo vim \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/*
 
 # nvidia-docker hooks: Map host's NVIDIA driver to container
 LABEL com.nvidia.volumes.needed="nvidia_driver"
